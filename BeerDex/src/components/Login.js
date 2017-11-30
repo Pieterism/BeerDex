@@ -5,7 +5,7 @@ export default class Login extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HELLO</Text>
+        <Text>HELLO PIETER</Text>
       </View>
     );
   }
