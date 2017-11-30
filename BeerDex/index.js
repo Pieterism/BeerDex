@@ -1,4 +1,5 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import { AppRegistry } from "react-native";
+import { AppRegistry } from "react-native";
+import Login from "./src/components/Login";
 
-AppRegistry.registerComponent('BeerDex', () => App);
+AppRegistry.registerComponent("BeerDex", () => Login);
