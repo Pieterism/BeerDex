@@ -1,4 +1,6 @@
 rootProject.name = 'BeerDex'
+include ':react-native-smart-splash-screen'
+project(':react-native-smart-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-smart-splash-screen/android')
 
 include ':app'
 
