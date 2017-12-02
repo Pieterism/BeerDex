@@ -11,11 +11,11 @@ export default class Logo extends Component<{}> {
             style={{ width: 70, height: 100 }}
             source={require("../images/logo.png")}
           />
-          <Text style={styles.logoText}>Welcome to your BeerDex!</Text>
+          <Text style={styles.logoText}>Welcome to your BeerDex</Text>
         </View>
         <View style={styles.containerButton}>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>DRINK EM ALL</Text>
+            <Text style={styles.buttonText}> Drink 'em all! </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -31,8 +31,9 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   logoText: {
-    marginVertical: 15,
-    fontSize: 20,
+    marginVertical: 20,
+    fontSize: 12.5,
+    fontFamily: "Pokemon GB",
     color: "#E28830"
   },
   button: {
@@ -42,12 +43,12 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   buttonText: {
-    fontFamily: "BoldDrink",
+    fontFamily: "Andy Bold",
     marginBottom: 5,
     marginTop: 5,
     marginLeft: 40,
     marginRight: 40,
-    fontSize: 45,
+    fontSize: 40,
     color: "#2A374A"
   },
   containerButton:{
