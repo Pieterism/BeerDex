@@ -11,7 +11,8 @@
     "react-native": "0.50.4",
     "react-native-button": "^2.1.0",
     "react-native-router-flux": "^4.0.0-beta.24",
-    "react-native-smart-splash-screen": "^2.3.5"
+    "react-native-smart-splash-screen": "^2.3.5",
+    "react-navigation": "^1.0.0-beta.21"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",
@@ -23,6 +24,8 @@
     "preset": "react-native"
   },
   "rnpm": {
-    "assets": ["./assets/fonts"]
+    "assets": [
+      "./assets/fonts"
+    ]
   }
 }

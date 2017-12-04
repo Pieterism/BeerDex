@@ -130,7 +130,8 @@ const styles = StyleSheet.create({
   },
   header: {
     color: "#E28830",
-    fontSize: 20,
+    fontFamily: "Andy Bold",
+    fontSize: 30,
     textAlign: "center",
     margin: 10
   },

@@ -5,13 +5,7 @@ import { Router, Scene } from "react-native-router-flux";
 
 class App extends React.Component {
   render() {
-    return (
-      <Router>
-        <Scene key="root">
-          <Scene key="login" component={Login} />
-        </Scene>
-      </Router>
-    );
+    return <AppNavigation />;
   }
 }
 

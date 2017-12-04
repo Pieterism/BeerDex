@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Button from "react-native-button";
 
-export default class Logo extends Component<{}> {
+export default class Logo extends Component {
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <View style={styles.container}>
@@ -14,7 +16,10 @@ export default class Logo extends Component<{}> {
           <Text style={styles.logoText}>Welcome to your BeerDex</Text>
         </View>
         <View style={styles.containerButton}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            onPress={() => navigate("Second")}
+            style={styles.button}
+          >
             <Text style={styles.buttonText}> Drink 'em all! </Text>
           </TouchableOpacity>
         </View>
@@ -51,10 +56,9 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#2A374A"
   },
-  containerButton:{
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+  containerButton: {
+    justifyContent: "flex-end",
+    alignItems: "center",
     marginBottom: 60
   }
-
 });
