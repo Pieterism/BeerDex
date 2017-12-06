@@ -22,115 +22,9 @@ var config = {
 const firebaseRef = firebase.initializeApp(config);
 
 export default class Login extends Component {
-
-  _fbAuth() {
-    FBLoginManager.logInWithReadPermissions(["public_profile"]).then(
-      function(result) {
-      if (result.isCancelled) {
-        alert("Login Cancelled");
-      } else {
-        AccesToken.getCurrentAccesToken().then(
-          AccesToken => {
-            const credential = firebase.auth.FacebookAuthProvider.credential(
-              AccesTokenData.AccesToken
-            );
-            firebase
-              .auth()
-              .signInWithCredential(credential)
-              .then(
-                result => {
-                  //promise was succesfull
-                },
-                error => {
-                  //promise was rejected
-                  console.log(error);
-                }
-              );
-          },
-          error => {
-            console.log("ERROR:" + error);
-          }
-        );
-      }
-    }
-  );
-  }
-
-  state = {
-    user: undefined // user has not logged in yet
-  };
-
-  // Set up Linking
-  componentDidMount() {
-    // Add event listener to handle OAuthLogin:// URLs
-    Linking.addEventListener("url", this.handleOpenURL);
-    // Launched from an external URL
-    Linking.getInitialURL().then(url => {
-      if (url) {
-        this.handleOpenURL({ url });
-      }
-    });
-  }
-
-  componentWillUnmount() {
-    // Remove event listener
-    Linking.removeEventListener("url", this.handleOpenURL);
-  }
-
-  handleOpenURL = ({ url }) => {
-    // Extract stringified user string out of the URL
-    const [, user_string] = url.match(/user=([^#]+)/);
-    this.setState({
-      // Decode the user string and parse it into JSON
-      user: JSON.parse(decodeURI(user_string))
-    });
-    if (Platform.OS === "ios") {
-      SafariView.dismiss();
-    }
-  };
-
-  // Handle Login with Facebook button tap
-  loginWithFacebook = () => this.openURL("http://localhost:3000/auth/facebook");
-
-  // Handle Login with Google button tap
-  loginWithGoogle = () => this.openURL("http://localhost:3000/auth/google");
-
-  // Open URL in a browser
-  openURL = url => {
-    // Use SafariView on iOS
-    if (Platform.OS === "ios") {
-      SafariView.show({
-        url: url,
-        fromBottom: true
-      });
-    } else {
-      // Or Linking.openURL on Android
-      Linking.openURL(url);
-    }
-  };
-
   render() {
-    const { user } = this.state;
     return (
       <View style={styles.container}>
-        {user ? (
-          // Show user info if already logged in
-          <View style={styles.content}>
-            <Text style={styles.header}>Welcome {user.name}!</Text>
-            <View style={styles.avatar}>
-              <Image source={{ uri: user.avatar }} style={styles.avatarImage} />
-            </View>
-          </View>
-        ) : (
-          //Show Please log in message if not
-          <View style={styles.content}>
-            <Text style={styles.header}>Welcome Stranger!</Text>
-            <View style={styles.avatar}>
-              <Icon name="user-circle" size={100} color="#546176" />
-            </View>
-            <Text style={styles.text}>Please log in to continue {"\n"}</Text>
-          </View>
-        )}
         {/* Login buttons <Icon name="user-circle" size={100} color="#546176" /> */}
         <View style={styles.buttons}>
           <Icon.Button
@@ -163,7 +57,7 @@ const iconStyles = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2A374A"
+    backgroundColor: "#2A374A",
   },
   content: {
     flex: 1,
