@@ -1,9 +1,61 @@
 import React, { Component } from "react";
-import { Image, Linking, StyleSheet, Platform, Text, View } from "react-native";
+import {
+  Image,
+  Linking,
+  StyleSheet,
+  Platform,
+  Text,
+  View,
+  Button
+} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import SafariView from "react-native-safari-view";
+import FBSDK, { FBLoginManager } from "react-native-fbsdk";
+import firebase from "firebase";
+
+var config = {
+  apiKey: "AIzaSyCvQjT6hl-oW0dNnctXwu-td8M0QkOnASs",
+  authDomain: "beerdex-187413.firebaseapp.com/",
+  databaseURL: "https://beerdex-187413.firebaseio.com/"
+};
+
+const firebaseRef = firebase.initializeApp(config);
 
 export default class Login extends Component {
+
+  _fbAuth() {
+    FBLoginManager.logInWithReadPermissions(["public_profile"]).then(
+      function(result) {
+      if (result.isCancelled) {
+        alert("Login Cancelled");
+      } else {
+        AccesToken.getCurrentAccesToken().then(
+          AccesToken => {
+            const credential = firebase.auth.FacebookAuthProvider.credential(
+              AccesTokenData.AccesToken
+            );
+            firebase
+              .auth()
+              .signInWithCredential(credential)
+              .then(
+                result => {
+                  //promise was succesfull
+                },
+                error => {
+                  //promise was rejected
+                  console.log(error);
+                }
+              );
+          },
+          error => {
+            console.log("ERROR:" + error);
+          }
+        );
+      }
+    }
+  );
+  }
+
   state = {
     user: undefined // user has not logged in yet
   };
@@ -70,23 +122,21 @@ export default class Login extends Component {
             </View>
           </View>
         ) : (
-          // Show Please log in message if not
+          //Show Please log in message if not
           <View style={styles.content}>
             <Text style={styles.header}>Welcome Stranger!</Text>
             <View style={styles.avatar}>
               <Icon name="user-circle" size={100} color="#546176" />
             </View>
-            <Text style={styles.text}>
-              Please log in to continue {"\n"}
-            </Text>
+            <Text style={styles.text}>Please log in to continue {"\n"}</Text>
           </View>
         )}
-        {/* Login buttons */}
+        {/* Login buttons <Icon name="user-circle" size={100} color="#546176" /> */}
         <View style={styles.buttons}>
           <Icon.Button
             name="facebook"
             backgroundColor="#3b5998"
-            onPress={this.loginWithFacebook}
+            onPress={this._fbAuth}
             {...iconStyles}
           >
             Login with Facebook
@@ -97,7 +147,7 @@ export default class Login extends Component {
             onPress={this.loginWithGoogle}
             {...iconStyles}
           >
-            Login with Google
+            Or with Google
           </Icon.Button>
         </View>
       </View>
