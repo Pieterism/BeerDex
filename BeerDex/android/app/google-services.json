@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "966884521881",
+    "firebase_url": "https://beerdex-187413.firebaseio.com",
+    "project_id": "beerdex-187413",
+    "storage_bucket": "beerdex-187413.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966884521881:android:f4fbd839920fcd65",
+        "android_client_info": {
+          "package_name": "com.BeerDex.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966884521881-v0u3o7m0r8rqq0ea2oco7cdv3o97k9aj.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "966884521881-i2hdgl1aqdg8ije30j7llie16ajl0oh5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "966884521881-doa10onf61dec9tql54vsia4cdolgcuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUY4lXVHLf8zfOTgoL1wsgL3dTi9ddWtk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
