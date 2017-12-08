@@ -30,7 +30,6 @@ const styles = {
     shadowOpacity: 0.98,
     elevation: 2,
     position: 'relative',
-    header: { visible:false }
   }
 };
 

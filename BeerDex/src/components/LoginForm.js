@@ -5,7 +5,7 @@
   omdat Login andere knoppen gebruikt heb ik die laten staan gelijk dat em is dus dan kan ik achteraf de logica er ook nog in duwen
 
   om in te loggen staat er momenteel nog maar 1 account geregistreerd dat is het volgende account:
-      test@test.comm
+      test@test.com
       password = password
 */
 
