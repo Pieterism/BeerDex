@@ -22,25 +22,28 @@ const Input = ({label, value, onChangeText, placeholder, secureTextEntry}) => {
 
 const styles = {
   inputStyle: {
-    color: '#000',
+    fontFamily: "Pokemon GB",
+    color: '#fff',
     paddingRight: 5,
     paddingLeft: 5,
-    fontSize: 18,
+    fontSize: 12,
     lineHeight: 23,
     flex: 2,                     // 2/3 will be for the input
   },
 
   labelStyle: {
-      fontSize: 18,
+      fontFamily: "Pokemon GB",
+      fontSize: 14,
       paddingLeft: 20,
-      flex: 1                 // 1/3 will be for the label
+      flex: 1,  
+      color: "#E28830"               // 1/3 will be for the label
   },
 
   containerStyle: {
     height: 40,
     flex : 1,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   }
 }
 export {Input};
