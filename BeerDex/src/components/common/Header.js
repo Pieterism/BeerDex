@@ -29,7 +29,8 @@ const styles = {
     shadowOffset: {width: 0, height :5},
     shadowOpacity: 0.98,
     elevation: 2,
-    position: 'relative'
+    position: 'relative',
+    header: { visible:false }
   }
 };
 

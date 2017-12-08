@@ -9,13 +9,14 @@ const styles = {
   containerStyle: {
     borderWidth: 1,
     borderRadius: 2,
-    borderColor: "#2A374A",
+    borderColor: "transparent",
     borderBottomWidth: 0,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 1,
+    backgroundColor: 'transparent',
     alignItems: "center"
   }
 };
