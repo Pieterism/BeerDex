@@ -13,18 +13,12 @@ import SafariView from "react-native-safari-view";
 import FBSDK, { FBLoginManager } from "react-native-fbsdk";
 import firebase from "firebase";
 
-var config = {
-  apiKey: "AIzaSyCvQjT6hl-oW0dNnctXwu-td8M0QkOnASs",
-  authDomain: "beerdex-187413.firebaseapp.com/",
-  databaseURL: "https://beerdex-187413.firebaseio.com/"
-};
 
-const firebaseRef = firebase.initializeApp(config);
 
-export default class Login extends Component {
+class Login extends Component {
   render() {
     return (
-      <View style={styles.container}>
+        <View style={styles.container}>
         {/* Login buttons <Icon name="user-circle" size={100} color="#546176" /> */}
         <View style={styles.buttons}>
           <Icon.Button
@@ -45,6 +39,7 @@ export default class Login extends Component {
           </Icon.Button>
         </View>
       </View>
+
     );
   }
 }
@@ -89,5 +84,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     margin: 30,
     marginBottom: 40
+  },
+  errorTextStyle: {
+    fontSize: 20,
+    alignSelf: 'center',
+    color: 'red'
   }
 });
+
+export default Login;

@@ -1,11 +1,42 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Button from "react-native-button";
+import RouterComponent from './RouterComponent.js';
+import ReduxThunk from 'redux-thunk';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import reducers from './../reducers';
+import firebase from 'firebase';
 
 export default class Logo extends Component {
-  render() {
-    const { navigate } = this.props.navigation;
+  componentWillMount () {
+    const config = {
+      apiKey: "AIzaSyCb0oTczXHUmbVW8tDQ1ZigYb-N_YYvcnw",
+      authDomain: "manager-2405b.firebaseapp.com",
+      databaseURL: "https://manager-2405b.firebaseio.com",
+      projectId: "manager-2405b",
+      storageBucket: "manager-2405b.appspot.com",
+      messagingSenderId: "528377064997"
+    };
 
+  firebase.initializeApp(config);
+  }
+
+
+  state = {login:false};
+  onButtonPress () {
+    this.setState({login:true})
+  }
+
+  renderContent() {
+    if (this.state.login) {
+      return (
+
+        <Provider store = {createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
+          <RouterComponent />
+        </Provider>
+      );
+    }
     return (
       <View style={styles.container}>
         <View style={styles.container}>
@@ -17,7 +48,7 @@ export default class Logo extends Component {
         </View>
         <View style={styles.containerButton}>
           <TouchableOpacity
-            onPress={() => navigate("Second")}
+            onPress={this.onButtonPress.bind(this)}
             style={styles.button}
           >
             <Text style={styles.buttonText}> Drink 'em all! </Text>
@@ -26,12 +57,21 @@ export default class Logo extends Component {
       </View>
     );
   }
+
+  render() {
+
+    return (
+      <View style = {{flex: 1}}>
+        {this.renderContent()}
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#2A374A",
-    flexGrow: 1,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center"
   },
