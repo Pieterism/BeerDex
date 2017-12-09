@@ -14,7 +14,7 @@ const RouterComponent = () => {
         <Scene
           key="login"
           component={LoginForm}
-          backgroundColor="2A374A"
+          backgroundColor="#2A374A"
           initial
         />
       </Scene>

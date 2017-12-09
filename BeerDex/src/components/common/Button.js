@@ -17,8 +17,8 @@ const styles = {
      borderRadius: 5,
      borderWidth: 1,
      borderColor: '#E28830',
-     marginLeft: 5,
-     marginRight: 5
+     marginLeft: 90,
+     marginRight: 90
      },
 
   textStyle: {

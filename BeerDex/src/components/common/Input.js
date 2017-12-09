@@ -20,7 +20,7 @@ const Input = ({
         onChangeText={onChangeText}
         autoCorrect={false}
         placeholder={placeholder}
-        placeholderTextColor="#eceff1"
+        placeholderTextColor="#83afef"
       />
     </View>
   );
