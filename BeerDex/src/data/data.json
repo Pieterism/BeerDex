@@ -1,0 +1,71 @@
+{
+  "levels" :[
+    {
+      "array": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "level": 0,
+    "description": "We all had to start somewhere... Ash had to start in Pallet Town and had to beat Brock for his first badge. Let's see if you're as good to collect 'em all!",
+    "complete": 0,
+    "title": "Rookie"
+  },
+  {
+    "array": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+      "level": 1,
+      "description": "We all had to start somewhere, let's see if you can collect these:",
+      "complete": 0,
+      "title": "Rookie"
+    },
+    {
+      "array": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "level": 2,
+    "description": "We all had to start somewhere... Ash had to start in Pallet Town and had to beat Brock for his first badge. Let's see if you're as good to collect 'em all!",
+    "complete": 0,
+    "title": "Rookie"
+  },
+  {
+      "array": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "level": 3,
+    "description": "We all had to start somewhere, let's see if you can collect these:",
+    "complete": 0,
+    "title": "Rookie"
+  }
+  ]
+}

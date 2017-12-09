@@ -9,23 +9,22 @@ import BeerList from "./BeerList.js";
 
 const RouterComponent = () => {
   return (
-    <Router sceneStyle={{ paddingTop: 50 }}>
+    <Router>
       <Scene key="auth" hideNavBar={true}>
         <Scene
           key="login"
           component={LoginForm}
           backgroundColor="#2A374A"
+          hideNavBar={true}
           initial
         />
       </Scene>
 
-      <Scene key="main" hideNavBar={true}> 
+      <Scene key="main">
         <Scene
-          key="employeeList"
+          key="Levels"
           component={BeerList}
-          title="Employees"
-          rightTitle="Add"
-          onRight={() => console.log("touched!")}
+          title="Levels"
           initial
         />
         <Scene
@@ -38,5 +37,11 @@ const RouterComponent = () => {
     </Router>
   );
 };
+
+const styles = {
+    navBarStyle : {
+      backgroundColor: "#2A374A"
+    }
+}
 
 export default RouterComponent;

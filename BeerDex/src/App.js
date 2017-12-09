@@ -1,3 +1,5 @@
+// this is not used anymore! 
+
 import React from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import Login from "./components/Login";
