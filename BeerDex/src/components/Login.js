@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import SafariView from "react-native-safari-view";
-import FBSDK, { FBLoginManager } from "react-native-fbsdk";
 import firebase from "firebase";
 
 
