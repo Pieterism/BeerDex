@@ -17,7 +17,16 @@ export default class Map extends Component {
             latitudeDelta: 0.01,
             longitudeDelta: 0.01
           }}
-        />
+        >
+          <MapView.Marker
+            coordinate =
+            {{
+              latitude: 51.053641,
+              longitude: 3.723632,
+            }}
+            
+          />
+        </MapView>
       </View>
     );
   }
@@ -31,10 +40,10 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   map: {
-    right : 0,
+    right: 0,
     left: 0,
     top: 0,
     bottom: 0,
-    position: 'absolute'
+    position: "absolute"
   }
 });
