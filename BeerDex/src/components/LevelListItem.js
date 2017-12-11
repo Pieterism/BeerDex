@@ -17,7 +17,8 @@ class LevelListItem extends Component {
 
     return (
       <Text style={styles.descriptionStyle}>
-        You still have lots to learn young padawan!
+        You still have lots to learn young padawan.{"\n"}
+        Keep drinkin'...
       </Text>
     );
   }
@@ -33,13 +34,13 @@ class LevelListItem extends Component {
   render() {
     return (
       <TouchableWithoutFeedback onPress={this.onButtonPress.bind(this)}>
-        <View>
+        <View style={styles.cardsection}>
           <CardSection>
             <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
               <Text style={styles.titleStyle}>{this.props.level.title}</Text>
               <Image
                 style={styles.img}
-                source={require("../images/levelIcon2.png")}
+                source={require("../images/levelIconEmpty.png")}
               />
             </View>
           </CardSection>
@@ -60,11 +61,22 @@ const styles = {
   },
   descriptionStyle: {
     fontSize: 12,
-    paddingLeft: 35
+    fontFamily: "Pokemon GB",
+    color: "#E28830",
+    paddingLeft: 40
   },
   img: {
     width: 25,
     height: 35
+  },
+  cardsection: {
+    borderColor: "#E28830",
+    borderRadius: 25,
+    borderWidth: 3,
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 3,
+    marginBottom: 3
   }
 };
 
