@@ -6,3 +6,4 @@ export const LOGIN_USER_SUCCES = 'login_user_succes';
 export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGIN_USER = 'login_user';
 export const BEERLEVELS_FETCH = 'beerlevels_fetch';
+export const SELECT_LEVEL = 'select_level';

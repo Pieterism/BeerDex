@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  ListView
+  ListView,
+  ScrollView
 } from 'react-native';
 import _ from 'lodash';
 import {connect} from 'react-redux';
@@ -13,35 +14,20 @@ import LevelListItem from './LevelListItem.js';
 import data from './../data/data.json';
 
 class BeerList extends Component {
-  componentWillMount () {
-    // need action for data retrieval!
-    this.props.levelsFetch();
-    this.createDataSource(this.props);
-  }
-  componentWillReceiveProps(nextProps) {
-    // nextProps are the next set of props
-    //this.props are the old props
-    this.createDataSource(this.props);
-  }
 
-  createDataSource({beer}) {
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1,r2) => r1 !==r2
-    });
-    this.dataSource = ds.cloneWithRows(this.props);
-  }
-
-  renderRow(beer) {
-    return <LevelListItem employee= {beer} />;
+  renderLevels() {
+    return this.props.levels.map( level =>
+      <LevelListItem key={level.number} level = {level} />
+    )
   }
 
   render () {
     return (
-      <ListView
-        enableEmptySections
-        dataSource= {this.dataSource}
-        renderRow= {this.renderRow}
-      />
+      <View style = {styles.container}>
+        <ScrollView style = {{flex:1}}>
+          {this.renderLevels()}
+        </ScrollView>
+      </View>
     );
   };
 
@@ -51,8 +37,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#2A374A",
     flex: 1,
-    justifyContent: "flex-start",
-    alignItems: "center"
+    paddingTop: 50
   },
 
   text: {
@@ -63,12 +48,9 @@ const styles = StyleSheet.create({
 
 });
 
-const mapStateToProps = state => {
-  const levels = _.map(state.levels, (val,uid) => {
-    return { ...val, uid}
-  });
-
-  return { levels};
+const mapStateToProps = ({beer}) => {
+  const {levels} = beer;
+  return levels;
 };
 
 export default connect (mapStateToProps, {levelsFetch} )(BeerList);
