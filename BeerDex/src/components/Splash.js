@@ -11,12 +11,12 @@ import firebase from 'firebase';
 export default class Logo extends Component {
   componentWillMount () {
     const config = {
-      apiKey: "AIzaSyCb0oTczXHUmbVW8tDQ1ZigYb-N_YYvcnw",
-      authDomain: "manager-2405b.firebaseapp.com",
-      databaseURL: "https://manager-2405b.firebaseio.com",
-      projectId: "manager-2405b",
-      storageBucket: "manager-2405b.appspot.com",
-      messagingSenderId: "528377064997"
+      apiKey: "AIzaSyCvQjT6hl-oW0dNnctXwu-td8M0QkOnASs",
+      authDomain: "beerdex-187413.firebaseapp.com",
+      databaseURL: "https://beerdex-187413.firebaseio.com",
+      projectId: "beerdex-187413",
+      storageBucket: "beerdex-187413.appspot.com",
+      messagingSenderId: "966884521881"
     };
 
   firebase.initializeApp(config);

@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import {Actions} from 'react-native-router-flux';
-import {BEERLEVELS_FETCH, SELECT_LEVEL} from './types.js';
+import {BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER} from './types.js';
 import data from './../data/data.json';
 
 
@@ -23,5 +23,12 @@ export const levelSelected = (selectedLevel) => {
   return {
     type: SELECT_LEVEL,
     payload: selectedLevel
+  };
+}
+
+export const beerSelected = (selectedBeer) => {
+  return {
+    type: SELECT_BEER,
+    payload: selectedBeer
   };
 }

@@ -1,11 +1,24 @@
 import React, {Component} from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, TouchableWithoutFeedback} from 'react-native';
 import { CardSection } from './common';
+import { Actions } from 'react-native-router-flux';
+import { beerSelected } from './../actions';
+import {connect} from 'react-redux';
+
 
 class BeerItem extends Component {
+
+  onButtonPress () {
+    const {beer} = this.props;
+    this.props.beerSelected(beer);
+    Actions.BeerDetail();
+  }
   render () {
     const {name, percentage, description, image} = this.props.beer;
     return (
+      <TouchableWithoutFeedback
+        onPress = {this.onButtonPress.bind(this)}
+      >
       <View style={styles.containerStyle}>
         <View style = {styles.imageContainerStyle}>
           <Image
@@ -31,6 +44,7 @@ class BeerItem extends Component {
 
         </View>
       </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -64,4 +78,8 @@ const styles = {
   }
 };
 
-export default BeerItem;
+const mapStateToProps = (beer) => {
+
+}
+
+export default connect(null, {beerSelected})(BeerItem);

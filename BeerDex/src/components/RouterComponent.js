@@ -7,6 +7,7 @@ import Login from "./Login.js";
 import Splash from "./Splash.js";
 import BeerList from "./BeerList.js";
 import Beers from './Beers.js'
+import BeerDetail from './BeerDetail.js';
 
 const RouterComponent = () => {
   return (
@@ -32,6 +33,11 @@ const RouterComponent = () => {
           key="Beers"
           component={Beers}
           title="TODO List"
+        />
+        <Scene
+          key="BeerDetail"
+          component={BeerDetail}
+          title="BeerDetail"
         />
       </Scene>
     </Router>
