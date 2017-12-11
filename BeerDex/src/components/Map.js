@@ -1,50 +1,81 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { AppRegistry, StyleSheet, Text, View, Dimensons, Dimensions } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MapStyle from './common/MapStyle.json';
+
+const {width, height}= Dimensions.get('window');
+
+const ASPECT_RATIO = width / height;
+const LATITUDE = 0;
+const LONGITUDE = 0;
+const LATITUDE_DELTA = 0.0922;
+const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+
 
 export default class Map extends Component {
-  constructor(props){
-    super(props)
+  constructor() {
+    super();
 
-    this.state={
-      initialPosition: {
-        latitude: 0,
-        longtitude: 0,
-        latitudeDelta: 0,
-        longitudeDelta: 0
-      },
-      markerPosition: {
-        longtitude:0,
-        latitude: 0
+    this.state = {
+      region: {
+        latitude: LATITUDE,
+        longitude: LONGITUDE,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA,
       }
-    }
+    };
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        this.setState({
+          region: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            latitudeDelta: LATITUDE_DELTA,
+            longitudeDelta: LONGITUDE_DELTA,
+          }
+        });
+      },
+    (error) => console.log(error.message),
+    { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+    );
+
+    this.watchID = navigator.geolocation.watchPosition(
+      position => {
+        this.setState({
+          region: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            latitudeDelta: LATITUDE_DELTA,
+            longitudeDelta: LONGITUDE_DELTA,
+          }
+        });
+      }
+    );
+  }
+
+  componentWillUnmount() {
+    navigator.geolocation.clearWatch(this.watchID);
   }
 
   render() {
-    const { region } = this.props;
-
     return (
       // Huidige locatie tonen! 
       <View style={styles.container}>
         <MapView
           provider={PROVIDER_GOOGLE}
-          style={styles.map}
-          region={{
-            latitude: 51.053641,
-            longitude: 3.723632,
-            latitudeDelta: 0.015,
-            longitudeDelta: 0.015
-          }}
-        >
+          style={styles.mapview}
+          customMapStyle={MapStyle}
+          showsUserLocation = {true}
+          onRegionChange={region => this.setState({region})}
+          onRegonChangeComplete={ region => this.setState({region})}>
+
           <MapView.Marker
-            coordinate =
-            {{
-              latitude: 51.053641,
-              longitude: 3.723632,
-            }}
-            //Naam van bier inzetten
-            title = {"Marker"}
-            description = {"Description"}
+            coordinate ={this.state.region}
+            //Naam van bier inzetten op vaste coordinaten. 
+            //title = {"My Position"}
             >
             <View style = {styles.radius}>
               <View style = {styles.marker}/>
@@ -63,13 +94,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+  mapview: {
+    height: '100%',
+    width: '100%'
+  },
   map: {
     right: 0,
     left: 0,
     top: 0,
     bottom: 0,
     position: "absolute"
-  },
+  }/* 
   radius: {
     height: 50,
     width: 50,
@@ -81,6 +116,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  //uitzicht van marker kunnen we bijwerken naar pinpoint ofzo
   marker: {
     height: 20,
     width: 20,
@@ -89,5 +125,5 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     backgroundColor: '#007AFF' ,
     borderColor: 'white'
-  }
+  }*/
 });
