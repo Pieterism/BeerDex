@@ -31,6 +31,18 @@ class LevelListItem extends Component {
   }
 
   render() {
+    var images = [];
+    const {number} = this.props.level;
+
+    for (let i = 0 ; i< number; i++){
+      images.push(
+        <Image
+          style={styles.img}
+          source={require("../images/levelIcon2.png")}
+        />
+      )
+    }
+
     return (
       <TouchableWithoutFeedback onPress={this.onButtonPress.bind(this)}>
         <View>
@@ -41,6 +53,7 @@ class LevelListItem extends Component {
                 style={styles.img}
                 source={require("../images/levelIcon2.png")}
               />
+              {images}
             </View>
           </CardSection>
 
