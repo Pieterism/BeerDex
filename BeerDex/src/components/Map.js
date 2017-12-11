@@ -1,3 +1,11 @@
+//Meer info omtrent mapview en aanmaken van markers op:
+//https://github.com/react-community/react-native-maps
+
+//Meer info over de geolocatie en locatie opvragen op:
+//https://facebook.github.io/react-native/docs/geolocation.html
+
+//nog nice voorbeeld voor gebruik van markers
+//http://www.abeanderson.me/React-Native-Maps/
 import React, { Component } from "react";
 import {
   AppRegistry,
@@ -5,7 +13,8 @@ import {
   Text,
   View,
   Dimensons,
-  Dimensions
+  Dimensions,
+  Image
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import MapStyle from "./common/MapStyle.json";
@@ -24,14 +33,14 @@ export default class Map extends Component {
 
     this.state = {
       initialPosition: {
-        latitude: 0,
-        longitude: 0,
-        latitudeDelta: 0,
-        longitudeDelta: 0
+        latitude: 51.060317,
+        longitude: 3.708432,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01
       },
       markerPosition: {
-        latitude: 0,
-        longitude: 0,
+        latitude: 51.060317,
+        longitude: 3.708432,
       }
     };
   }
@@ -91,11 +100,14 @@ export default class Map extends Component {
           <MapView.Marker
             coordinate={this.state.markerPosition}
             //Naam van bier inzetten
-            //title = {"Marker"}
-            //description = {"Description"}
+            title = {"KU LEUVEN"}
+            description = {"Technologiecampus Gent"}
           >
-            <View style={styles.radius}>
-              <View style={styles.marker} />
+            <View>
+              <Image
+                style={styles.imageMarker}
+                source={require('../images/mapMarker.png')}
+              />
             </View>
           </MapView.Marker>
         </MapView>
@@ -111,6 +123,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+  //AANPASSEN OM KLEINERE KAART TE KRIJGEN
   map: {
     right: 0,
     left: 0,
@@ -137,5 +150,9 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     backgroundColor: "#007AFF",
     borderColor: "white"
+  },
+  imageMarker: {
+    width: 25,
+    height: 25 * 1.2583
   }
 });
