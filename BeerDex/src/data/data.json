@@ -1,22 +1,67 @@
 {
   "levels" :[
     {
-      "array": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10
+      "beers": [
+      {
+        "name": "Jupiler",
+        "percentage": 5.2,
+        "description": "Goe voor na de match! ",
+        "completed": false,
+        "image": "http://www.omervanderghinste.be/sites/default/files/LOGO%20BOCKOR%20ridder%20en%20schild_cmyk.jpg",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Maes",
+        "percentage": 5.2,
+        "description": "Goe voor als de rest op is... ",
+        "completed": false,
+        "image": "https://pub.be/wp-content/uploads/2016/12/Maes-logo-498x500.jpg",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Bockor",
+        "percentage": 5.2,
+        "description": "Voor de cafés dan geen geld hebben ",
+        "completed": false,
+        "image": "http://www.bierpassie.com/breweryicon/116/medium/1370459531.jpg",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Duvel",
+        "percentage": 8.5,
+        "description": "Voor als het beest eventjes los moet ;)",
+        "completed": false,
+        "image": "http://www.merchandise-essentials.com/wp-content/uploads/2017/07/logo-duvel1.jpg",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Brugse Zot",
+        "percentage": 6,
+        "description": "Voor die avonden met je West-Vlaamse maten",
+        "completed": false,
+        "image": "https://www.brugsezot.be/data/images/pageMedia/crop_2_1401189650_BRUGSEZOTbeeldCMYK.png",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Heineken",
+        "percentage": 5,
+        "description": "Het is door Nederlanders gemaakt... wat had je nu gedacht?",
+        "completed": false,
+        "image": "http://is5.mzstatic.com/image/thumb/Purple128/v4/2b/37/87/2b3787aa-6700-c8e7-fa09-f03009f5aed1/source/1200x630bb.jpg",
+        "location": null,
+        "picture" : null
+      },
     ],
-    "level": 0,
+    "number": 0,
     "description": "We all had to start somewhere... Ash had to start in Pallet Town and had to beat Brock for his first badge. Let's see if you're as good to collect 'em all!",
     "complete": 0,
-    "title": "Rookie"
+    "title": "Newcomer",
+    "free": true
   },
   {
     "array": [
@@ -31,10 +76,11 @@
       29,
       30
     ],
-      "level": 1,
-      "description": "We all had to start somewhere, let's see if you can collect these:",
+      "number": 1,
+      "description": "Not bad... but you still have a long way to go! You have merely proven that you get thirsty once in a while... Try and collect these: ",
       "complete": 0,
-      "title": "Rookie"
+      "title": "Rookie",
+      "free": false
     },
     {
       "array": [
@@ -49,10 +95,11 @@
       39,
       40
     ],
-    "level": 2,
-    "description": "We all had to start somewhere... Ash had to start in Pallet Town and had to beat Brock for his first badge. Let's see if you're as good to collect 'em all!",
+    "number": 2,
+    "description": "Well done, you have proven that you do have some dedication in your life... even though its clearly in the wrong activity. But hey, you have come so far, you might as well go through it till the end!",
     "complete": 0,
-    "title": "Rookie"
+    "title": "Amateur",
+    "free": false
   },
   {
       "array": [
@@ -62,10 +109,11 @@
       49,
       50
     ],
-    "level": 3,
-    "description": "We all had to start somewhere, let's see if you can collect these:",
+    "number": 3,
+    "description": "Now that you have come so far, we made a level espacially for you, Rick Sanchez! Only you can reach this far!",
     "complete": 0,
-    "title": "Rookie"
+    "title": "Rick Sanchez",
+    "free": false
   }
   ]
 }

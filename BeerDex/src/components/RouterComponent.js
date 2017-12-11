@@ -6,6 +6,7 @@ import LoginForm from "./LoginForm.js";
 import Login from "./Login.js";
 import Splash from "./Splash.js";
 import BeerList from "./BeerList.js";
+import Beers from './Beers.js'
 
 const RouterComponent = () => {
   return (
@@ -28,10 +29,9 @@ const RouterComponent = () => {
           initial
         />
         <Scene
-          key="employeeCreate"
-          component={BeerList}
-          hideNavBar={true}
-          title="Create Employee"
+          key="Beers"
+          component={Beers}
+          title="TODO List"
         />
       </Scene>
     </Router>
