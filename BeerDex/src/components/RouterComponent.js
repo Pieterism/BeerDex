@@ -34,7 +34,7 @@ const RouterComponent = () => {
           }}
           navigationBarStyle={{
             position: "absolute",
-            backgroundColor: "transparent",
+            backgroundColor: "#2A374A",
             zIndex: 100,
             top: 0,
             left: 0,
@@ -55,7 +55,7 @@ const RouterComponent = () => {
           }}
           navigationBarStyle={{
             position: "absolute",
-            backgroundColor: "transparent",
+            backgroundColor: "#2A374A",
             zIndex: 100,
             top: 0,
             left: 0,
@@ -75,7 +75,7 @@ const RouterComponent = () => {
           }}
           navigationBarStyle={{
             position: "absolute",
-            backgroundColor: "transparent",
+            backgroundColor: "#2A374A",
             zIndex: 100,
             top: 0,
             left: 0,

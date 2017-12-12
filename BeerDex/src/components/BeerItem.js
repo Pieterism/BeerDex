@@ -17,14 +17,9 @@ class BeerItem extends Component {
       <TouchableWithoutFeedback onPress={this.onButtonPress.bind(this)}>
         <View style={styles.buttonView}>
           <View style={styles.iconTitle}>
-            <View style={styles.imageText}>
-              <Image style={styles.imageStyle} source={{ uri: image }} />
-            </View>
-            <View>
-              <View style={styles.title}>
-                <Text style={styles.titleStyle}>{name}</Text>
-              </View>
-            </View>
+            <Image style={styles.imageStyle} source={{ uri: image }} />
+            <Text style={styles.titleStyle}>{name}</Text>
+            
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -54,50 +49,16 @@ const styles = {
     marginTop: 10,
     marginBottom: 10
   },
-  imageText: {},
   imageStyle: {
-    borderRadius: 10,
     height: 50,
     width: 50,
     resizeMode: "contain",
     backgroundColor: "white"
   },
-  title: {
-    alignItems: "flex-end",
-    justifyContent: "flex-end"
-  },
   titleStyle: {
     fontSize: 30,
     color: "#E28830",
     fontFamily: "Andy Bold"
-  },
-
-  cardView: {
-    backgroundColor: "transparent",
-    justifyContent: "flex-end",
-    flexDirection: "row",
-    borderColor: "transparent"
-  },
-
-  textContainerStyle: {
-    flex: 3
-  },
-  containerStyle: {
-    flex: 1,
-    flexDirection: "row",
-    borderRadius: 4,
-    borderWidth: 0.5,
-    borderColor: "#E28830"
-  },
-  infoText: {
-    fontFamily: "atwriter",
-    color: "#E28830"
-  },
-
-  descriptionStyle: {
-    fontSize: 12,
-    color: "#E28830",
-    fontFamily: "Pokemon GB"
   }
 };
 
