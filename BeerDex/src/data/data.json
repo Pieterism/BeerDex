@@ -90,17 +90,77 @@
     "free": true
   },
   {
-    "array": [
-      21,
-      22,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30
+    "beers": [
+      {
+        "name": "Stella Artois",
+        "percentage": 5.2,
+        "description": "Goe voor na de match! ",
+        "completed": false,
+        "brewery": "AB InBev",
+        "image": "https://seeklogo.com/images/S/stella-artois-logo-04BFEE2241-seeklogo.com.png",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Cubanisto",
+        "percentage": 5.9,
+        "description": "Goe voor als de rest op is... ",
+        "completed": false,
+        "brewery": "AB InBev",
+        "image": "http://www.bierpromoties.be/images/merken/2165-Cubanisto%20Logo.png",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Westmalle tripel",
+        "percentage": 9.5,
+        "description": "Voor de cafés dan geen geld hebben ",
+        "completed": false,
+        "brewery": "Onze-Lieve-Vrouw van het Heilig Hart",
+        "image": "http://www.deliriumhoppyloft.com/media/catalog/product/cache/7/thumbnail/500x/9df78eab33525d08d6e5fb8d27136e95/w/e/westmalle_tripel_33cl.jpg",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Delirium tremens",
+        "percentage": 8.5,
+        "description": "Voor als het beest eventjes los moet ",
+        "completed": false,
+        "brewery": "Huyghe",
+        "image": "https://www.delirium.be/e2/site/delirium/content/site/image/pink_elephant.svg?v=2615f73bc9a936cb3f379275f4fd3c89",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "La Chouffe",
+        "percentage": 8,
+        "description": "Voor die avonden met je West-Vlaamse maten",
+        "completed": false,
+        "brewery": "Brasserie d'Achouffe",
+        "image": "http://www.beergiftsbelgium.be/media/catalog/product/cache/19/image/1800x/040ec09b1e35df139433887a97daa66f/p/8/p806.jpg",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Lefffe Blond",
+        "percentage": 6.6,
+        "description": "Het is door Nederlanders gemaakt... wat had je nu gedacht?",
+        "completed": false,
+        "brewery": "AB InBev",
+        "image": "http://www.totallybeer.com.br/imgsist/conteudo/Leffe_Logo.jpg",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Witkap Stimulo",
+        "percentage": 6,
+        "description": "Beste Pils ever! ",
+        "completed": false,
+        "brewery": "Slaghmuylder",
+        "image": "http://www.witkap.be/witkap/witkap_eng/Home_files/stimulo_rond.png",
+        "location": null,
+        "picture" : null
+      },
     ],
       "number": 1,
       "description": "Not bad... but you still have a long way to go! You have merely proven that you get thirsty once in a while... Try and collect these: ",
@@ -110,16 +170,76 @@
     },
     {
       "array": [
-      31,
-      32,
-      33,
-      34,
-      35,
-      36,
-      37,
-      38,
-      39,
-      40
+        {
+          "name": "Rodenbach",
+          "percentage": 5.2,
+          "description": "Goe voor na de match! ",
+          "completed": false,
+          "brewery": "Rodenbach",
+          "image": "https://www.beerwulf.com/siteassets/brewer-logos/brouwerij_rodenbach.jpg",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Palm",
+          "percentage": 5.2,
+          "description": "Goe voor als de rest op is... ",
+          "completed": false,
+          "brewery": "Brouwerij Palm",
+          "image": "http://www.palm.be/webimages/erfgoed/stoeterij/palmtrekpaarden/palmnu.jpg",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Leute bok",
+          "percentage": 7.5,
+          "description": "Voor de cafés dan geen geld hebben ",
+          "completed": false,
+          "brewery": "Brouwerij Van Steenberge",
+          "image": "https://www.biernet.nl/images/merken/8774-Leute%20Bokbier.jpg",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Orval",
+          "percentage": 6.2,
+          "description": "Voor als het beest eventjes los moet ",
+          "completed": false,
+          "brewery": "abdij Notre-Dame d'Orval",
+          "image": "http://www.deliriumcafe.be/media/catalog/product/cache/22/image/9df78eab33525d08d6e5fb8d27136e95/o/r/orval.jpg",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "De Koninck",
+          "percentage": 5.2,
+          "description": "Voor die avonden met je West-Vlaamse maten",
+          "completed": false,
+          "brewery": "Brouwerij De Koninck",
+          "image": "https://www.brugsezot.be/data/images/pageMedia/crop_2_1401189650_BRUGSEZOTbeeldCMYK.png",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Rochefort 10",
+          "percentage": 11.3,
+          "description": "Het is door Nederlanders gemaakt... wat had je nu gedacht?",
+          "completed": false,
+          "brewery": "Abdij Notre-Dame de Saint-Rémy",
+          "image": "https://www.captaincooks.nl/wp-content/uploads/2015/06/Rochefort.png",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Tongerlo",
+          "percentage": 6.5,
+          "description": "Beste Pils ever! ",
+          "completed": false,
+          "brewery": "Brouwerij Haacht",
+          "image": "http://www.bierpassie.com/articleicon/2175/medium/1377510747.jpg",
+          "location": null,
+          "picture" : null
+        },
     ],
     "number": 2,
     "description": "Well done, you have proven that you do have some dedication in your life... even though its clearly in the wrong activity. But hey, you have come so far, you might as well go through it till the end!",
@@ -129,11 +249,76 @@
   },
   {
       "array": [
-      46,
-      47,
-      48,
-      49,
-      50
+        {
+          "name": "Afligem",
+          "percentage": 5.2,
+          "description": "Goe voor na de match! ",
+          "completed": false,
+          "brewery": "AB InBev",
+          "image": "https://seeklogo.com/images/S/stella-artois-logo-04BFEE2241-seeklogo.com.png",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Kasteel bier tripel",
+          "percentage": 5.2,
+          "description": "Goe voor als de rest op is... ",
+          "completed": false,
+          "brewery": "Brouwerij Alken-Maes",
+          "image": "https://seeklogo.com/images/M/maes-pils-logo-7925893F2B-seeklogo.com.png",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "West vleteren",
+          "percentage": 5.2,
+          "description": "Voor de cafés dan geen geld hebben ",
+          "completed": false,
+          "brewery": "Brouwerij Omer Vander Ghinste",
+          "image": "http://www.bierpassie.com/breweryicon/116/medium/1370459531.jpg",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Ace of spades",
+          "percentage": 8.5,
+          "description": "Voor als het beest eventjes los moet ",
+          "completed": false,
+          "brewery": "Brouwerij Duvel Moortgat",
+          "image": "http://www.merchandise-essentials.com/wp-content/uploads/2017/07/logo-duvel1.jpg",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Grey Goose",
+          "percentage": 6,
+          "description": "Voor die avonden met je West-Vlaamse maten",
+          "completed": false,
+          "brewery": "Brouwerij De Halve Maan",
+          "image": "https://www.brugsezot.be/data/images/pageMedia/crop_2_1401189650_BRUGSEZOTbeeldCMYK.png",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Chimay",
+          "percentage": 5,
+          "description": "Het is door Nederlanders gemaakt... wat had je nu gedacht?",
+          "completed": false,
+          "brewery": "Brouwerij Heineken",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk4uB8dT03JGez9QgUDqbuDXWrSa7BV1FnHThJNJthk4Lww3A7",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Pater lieven",
+          "percentage": 5,
+          "description": "Beste Pils ever! ",
+          "completed": false,
+          "brewery": "Brouwerij Alken-Maes",
+          "image": "http://alken.cdenv.be/sites/alken/files/imagecache/gallery_large_image/nieuws/crilogorgb.jpg",
+          "location": null,
+          "picture" : null
+        },
     ],
     "number": 3,
     "description": "Now that you have come so far, we made a level espacially for you, Rick Sanchez! Only you can reach this far!",
