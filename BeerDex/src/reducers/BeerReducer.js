@@ -1,4 +1,4 @@
-import { BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER} from './../actions/types.js';
+import { BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER, SEND_DATA} from './../actions/types.js';
 import data from './../data/data.json'
 
 const INITIAL_STATE = {
@@ -15,6 +15,8 @@ export default (state = INITIAL_STATE, action) => {
       return {...state, selectedLevel: action.payload}
     case SELECT_BEER:
       return {...state, selectedBeer: action.payload}
+    case SEND_DATA:
+      return {...state, selectedBeer: null}
     default:
       return state;
 

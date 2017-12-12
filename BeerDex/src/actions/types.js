@@ -8,3 +8,4 @@ export const LOGIN_USER = 'login_user';
 export const BEERLEVELS_FETCH = 'beerlevels_fetch';
 export const SELECT_LEVEL = 'select_level';
 export const SELECT_BEER = 'select_beer';
+export const SEND_DATA = 'send_data';
