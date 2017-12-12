@@ -64,7 +64,7 @@ export default class Map extends Component {
         this.setState({ markerPosition: initialRegion });
       },
       error => alert(JSON.stringify(error)),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 100 }
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 100 }
     );
 
     this.watchID = navigator.geolocation.watchPosition(position => {
@@ -125,13 +125,12 @@ const styles = StyleSheet.create({
   },
   //AANPASSEN OM KLEINERE KAART TE KRIJGEN
   map: {
-    right: 0,
-    left: 0,
-    top: 0,
-    bottom: 0,
+    right: 50,
+    left: 50,
+    top: 50,
+    bottom: 50,
     position: "absolute"
   },
-  radius: {
     height: 50,
     width: 50,
     borderRadius: 50 / 2,

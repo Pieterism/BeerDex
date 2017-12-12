@@ -16,16 +16,22 @@ class BeerItem extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.onButtonPress.bind(this)}>
         <View style={styles.buttonView}>
-          <View style={styles.iconTitle}>
-            <View style={styles.imageText}>
+
+
+          <View style={styles.imageContainerStyle}>
+            <Text style={styles.titleStyle}>{name}</Text>
+            <View style={styles.cardView}>
               <Image style={styles.imageStyle} source={{ uri: image }} />
-            </View>
-            <View>
-              <View style={styles.title}>
-                <Text style={styles.titleStyle}>{name}</Text>
-              </View>
+              
             </View>
           </View>
+          <View style={styles.textContainerStyle}>
+            <CardSection>
+              <Text style={styles.descriptionStyle}>{description}</Text>
+            </CardSection>
+          </View>
+
+
         </View>
       </TouchableWithoutFeedback>
     );
@@ -33,6 +39,21 @@ class BeerItem extends Component {
 }
 
 const styles = {
+  imageContainerStyle: {
+    flex: 2,
+    position: "relative",
+    backgroundColor: "transparent",
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    marginBottom: 10
+  },
+  cardView: {
+    backgroundColor: "transparent",
+    justifyContent: "flex-end",
+    flexDirection: "row",
+    borderColor: "transparent"
+  },
   buttonView: {
     flex: 1,
     backgroundColor: "transparent",
@@ -44,41 +65,12 @@ const styles = {
     marginTop: 3,
     marginBottom: 3
   },
-  iconTitle: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "transparent",
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10,
-    marginBottom: 10
-  },
-  imageText: {},
   imageStyle: {
-    borderRadius: 10,
-    height: 50,
-    width: 50,
-    resizeMode: "contain",
-    backgroundColor: "white"
+    borderRadius: 25,
+    height: 100,
+    width: 100,
+    resizeMode: "contain"
   },
-  title: {
-    alignItems: "flex-end",
-    justifyContent: "flex-end"
-  },
-  titleStyle: {
-    fontSize: 30,
-    color: "#E28830",
-    fontFamily: "Andy Bold"
-  },
-
-  cardView: {
-    backgroundColor: "transparent",
-    justifyContent: "flex-end",
-    flexDirection: "row",
-    borderColor: "transparent"
-  },
-
   textContainerStyle: {
     flex: 3
   },
@@ -89,15 +81,22 @@ const styles = {
     borderWidth: 0.5,
     borderColor: "#E28830"
   },
-  infoText: {
-    fontFamily: "atwriter",
-    color: "#E28830"
+  titleStyle: {
+    fontSize: 22,
+    paddingLeft: 15,
+    color: "#E28830",
+    fontFamily: "Andy Bold"
   },
-
   descriptionStyle: {
     fontSize: 12,
+    paddingLeft: 35,
     color: "#E28830",
     fontFamily: "Pokemon GB"
+  },
+  infoText: {
+    fontFamily: "atwriter",
+    marginLeft: 10,
+    color: "#E28830"
   }
 };
 

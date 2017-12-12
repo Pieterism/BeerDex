@@ -7,7 +7,8 @@
         "percentage": 5.2,
         "description": "Goe voor na de match! ",
         "completed": false,
-        "image": "http://www.omervanderghinste.be/sites/default/files/LOGO%20BOCKOR%20ridder%20en%20schild_cmyk.jpg",
+        "brewery": "Brouwerij Piedbœuf",
+        "image": "https://fd7.formdesk.com/knkv/jupiler.gif?v1",
         "location": null,
         "picture" : null
       },
@@ -16,7 +17,8 @@
         "percentage": 5.2,
         "description": "Goe voor als de rest op is... ",
         "completed": false,
-        "image": "https://pub.be/wp-content/uploads/2016/12/Maes-logo-498x500.jpg",
+        "brewery": "Brouwerij Alken-Maes",
+        "image": "https://seeklogo.com/images/M/maes-pils-logo-7925893F2B-seeklogo.com.png",
         "location": null,
         "picture" : null
       },
@@ -25,6 +27,7 @@
         "percentage": 5.2,
         "description": "Voor de cafés dan geen geld hebben ",
         "completed": false,
+        "brewery": "Brouwerij Omer Vander Ghinste",
         "image": "http://www.bierpassie.com/breweryicon/116/medium/1370459531.jpg",
         "location": null,
         "picture" : null
@@ -34,6 +37,7 @@
         "percentage": 8.5,
         "description": "Voor als het beest eventjes los moet ",
         "completed": false,
+        "brewery": "Brouwerij Duvel Moortgat",
         "image": "http://www.merchandise-essentials.com/wp-content/uploads/2017/07/logo-duvel1.jpg",
         "location": null,
         "picture" : null
@@ -43,6 +47,7 @@
         "percentage": 6,
         "description": "Voor die avonden met je West-Vlaamse maten",
         "completed": false,
+        "brewery": "Brouwerij De Halve Maan",
         "image": "https://www.brugsezot.be/data/images/pageMedia/crop_2_1401189650_BRUGSEZOTbeeldCMYK.png",
         "location": null,
         "picture" : null
@@ -52,7 +57,18 @@
         "percentage": 5,
         "description": "Het is door Nederlanders gemaakt... wat had je nu gedacht?",
         "completed": false,
-        "image": "http://is5.mzstatic.com/image/thumb/Purple128/v4/2b/37/87/2b3787aa-6700-c8e7-fa09-f03009f5aed1/source/1200x630bb.jpg",
+        "brewery": "Brouwerij Heineken",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk4uB8dT03JGez9QgUDqbuDXWrSa7BV1FnHThJNJthk4Lww3A7",
+        "location": null,
+        "picture" : null
+      },
+      {
+        "name": "Cristal",
+        "percentage": 5,
+        "description": "Beste Pils ever! ",
+        "completed": false,
+        "brewery": "Brouwerij Alken-Maes",
+        "image": "http://alken.cdenv.be/sites/alken/files/imagecache/gallery_large_image/nieuws/crilogorgb.jpg",
         "location": null,
         "picture" : null
       },

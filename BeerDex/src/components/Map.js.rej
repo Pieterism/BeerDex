@@ -1,0 +1,9 @@
+diff a/BeerDex/src/components/Map.js b/BeerDex/src/components/Map.js	(rejected hunks)
+@@ -70,6 +70,7 @@
+     bottom: 0,
+     position: "absolute"
+   },
++  radius: {
+     height: 50,
+     width: 50,
+     borderRadius: 50/2,
