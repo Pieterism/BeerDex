@@ -38,6 +38,7 @@ class LevelListItem extends Component {
     for (let i = 0 ; i< number; i++){
       images.push(
         <Image
+          key = {i}
           style={styles.img}
           source={require("../images/levelIconEmpty.png")}
         />
@@ -55,7 +56,7 @@ class LevelListItem extends Component {
                 style={styles.img}
                 source={require("../images/levelIcon.png")}
               />
-              
+
             </View>
           </CardSection>
 

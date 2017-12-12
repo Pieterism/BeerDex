@@ -4,13 +4,21 @@ import {connect} from 'react-redux';
 import {levelSelected} from './../actions';
 import BeerItem from './BeerItem.js';
 import Map from './Map.js';
-import Button from './common';
+import {Button} from './common';
+import {sendData, completed, updateData} from './../actions';
 
 
 
 class Beers extends Component {
-  renderBeerDetails () {
+  onButtonPress () {
+    const {levels, selectedBeer, selectedLevel} = this.props;
+    selectedBeer.completed = true;
+    selectedLevel.complete ++;
 
+    console.log(selectedBeer);
+    console.log(selectedLevel);
+    this.props.completed({selectedBeer, selectedLevel});
+    this.props.updateData(levels);
   }
 
   renderButton () {
@@ -29,16 +37,14 @@ class Beers extends Component {
       );
     }
     return (
-      <Text>
-        Hier moet een button komen
-      </Text>
+      <Button onPress={this.onButtonPress.bind(this)}>Drink</Button>
     );
   }
 
   render () {
     const {name, percentage, description, image, brewery} = this.props.selectedBeer;
     return (
-      <View style = {{paddingTop: 50}}>
+      <View style = {{paddingTop: 50, flex:1}}>
 
         <View>
           <Text style = {styles.titleStyle}>
@@ -51,7 +57,7 @@ class Beers extends Component {
           />
         </View>
 
-        <View>
+        <View style = {{flex:1}}>
           <Text>
             {brewery}
           </Text>
@@ -70,8 +76,8 @@ class Beers extends Component {
 }
 
 const mapStateToProps = ({beer}) => {
-  const {selectedLevel, selectedBeer} = beer;
-  return {selectedLevel, selectedBeer};
+  const {levels, selectedLevel, selectedBeer} = beer;
+  return {levels, selectedLevel, selectedBeer};
 };
 
 const styles = {
@@ -90,4 +96,4 @@ const styles = {
   }
 }
 
-export default connect(mapStateToProps)(Beers);
+export default connect(mapStateToProps, {sendData, completed, updateData})(Beers);

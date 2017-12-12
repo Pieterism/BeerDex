@@ -16,7 +16,8 @@ import data from './../data/data.json';
 class BeerList extends Component {
 
   renderLevels() {
-    return this.props.levels.map( level =>
+    console.log(this.props.levels)
+    return this.props.levels.levels.map( level =>
       <LevelListItem key={level.number} level = {level} />
     )
   }
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = ({beer}) => {
   const {levels} = beer;
-  return levels;
+  return {levels: levels};
 };
 
 export default connect (mapStateToProps, {levelsFetch} )(BeerList);

@@ -7,7 +7,6 @@ import BeerItem from './BeerItem.js';
 
 class Beers extends Component {
   renderBeers () {
-    console.log(this.props.selectedLevel.beers)
     return this.props.selectedLevel.beers.map( beer =>
       <BeerItem key={beer.name} beer = {beer} style = {{flex:1}}/>
     )
