@@ -6,8 +6,8 @@ import LoginForm from "./LoginForm.js";
 import Login from "./Login.js";
 import Splash from "./Splash.js";
 import BeerList from "./BeerList.js";
-import Beers from './Beers.js'
-import BeerDetail from './BeerDetail.js';
+import Beers from "./Beers.js";
+import BeerDetail from "./BeerDetail.js";
 
 const RouterComponent = () => {
   return (
@@ -26,18 +26,63 @@ const RouterComponent = () => {
         <Scene
           key="Levels"
           component={BeerList}
-          title="Levels"
+          title="LEVELS"
+          titleStyle={{
+            color: "#E28830",
+            fontSize: 40,
+            fontFamily: "Root Beer",
+          }}
+          navigationBarStyle={{
+            position: "absolute",
+            backgroundColor: "transparent",
+            zIndex: 100,
+            top: 0,
+            left: 0,
+            right: 0,
+            borderBottomWidth: 0,
+            elevation: 0,
+          }}
           initial
         />
         <Scene
           key="Beers"
           component={Beers}
-          title="TODO List"
+          title="BEERS"
+          titleStyle={{
+            color: "#E28830",
+            fontSize: 40,
+            fontFamily: "Root Beer"
+          }}
+          navigationBarStyle={{
+            position: "absolute",
+            backgroundColor: "transparent",
+            zIndex: 100,
+            top: 0,
+            left: 0,
+            right: 0,
+            borderBottomWidth: 0,
+            elevation: 0
+          }}
         />
         <Scene
           key="BeerDetail"
           component={BeerDetail}
-          title="BeerDetail"
+          title="BEER DETAILS"
+          titleStyle={{
+            color: "#E28830",
+            fontSize: 40,
+            fontFamily: "Root Beer"
+          }}
+          navigationBarStyle={{
+            position: "absolute",
+            backgroundColor: "transparent",
+            zIndex: 100,
+            top: 0,
+            left: 0,
+            right: 0,
+            borderBottomWidth: 0,
+            elevation: 0
+          }}
         />
       </Scene>
     </Router>
@@ -45,9 +90,11 @@ const RouterComponent = () => {
 };
 
 const styles = {
-    navBarStyle : {
-      backgroundColor: "#2A374A"
-    }
-}
+  navBarStyle: {
+    backgroundColor: "#2A374A",
+    navBarButtonColor:  "#E28830"
+
+  }
+};
 
 export default RouterComponent;

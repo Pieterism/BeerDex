@@ -39,7 +39,7 @@ class LevelListItem extends Component {
       images.push(
         <Image
           style={styles.img}
-          source={require("../images/levelIcon2.png")}
+          source={require("../images/levelIconEmpty.png")}
         />
       )
     }
@@ -50,11 +50,12 @@ class LevelListItem extends Component {
           <CardSection>
             <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
               <Text style={styles.titleStyle}>{this.props.level.title}</Text>
+              {images}
               <Image
                 style={styles.img}
-                source={require("../images/levelIconEmpty.png")}
+                source={require("../images/levelIcon.png")}
               />
-              {images}
+              
             </View>
           </CardSection>
 
