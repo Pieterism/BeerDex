@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {levelSelected} from './../actions';
 import BeerItem from './BeerItem.js';
 import Map from './Map.js';
+import Button from './common';
 
 
 
@@ -12,25 +13,55 @@ class Beers extends Component {
 
   }
 
-  render () {
-    const {name, percentage, description, image} = this.props.selectedBeer;
+  renderButton () {
+    const {completed} = this.props.selectedBeer;
+
+    if (completed) {
+      return (
+        <View>
+          <Text>
+            Hier Moet een map komen kejet
+          </Text>
+          <Text>
+            Hier moet een foto komen!
+          </Text>
+        </View>
+      );
+    }
     return (
-      <View style = {{paddingTop : 50}}>
-        <View style = {{flexDirection: 'row', justifyContent: 'space-around'}}>
+      <Text>
+        Hier moet een button komen
+      </Text>
+    );
+  }
+
+  render () {
+    const {name, percentage, description, image, brewery} = this.props.selectedBeer;
+    return (
+      <View style = {{paddingTop: 50}}>
+
+        <View>
+          <Text style = {styles.titleStyle}>
+            {name}
+          </Text>
+
           <Image
             style = {styles.imageStyle}
             source = {{uri : image}}
           />
-
-          <Text style = {styles.titleStyle}>
-            {name}
-          </Text>
         </View>
 
         <View>
           <Text>
+            {brewery}
+          </Text>
+          <Text>
+            {percentage}
+          </Text>
+          <Text>
             {description}
           </Text>
+          {this.renderButton()}
         </View>
 
       </View>
