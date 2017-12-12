@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import {Actions} from 'react-native-router-flux';
-import {BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER} from './types.js';
+import {BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER, SEND_DATA} from './types.js';
 import data from './../data/data.json';
 
 
@@ -32,3 +32,15 @@ export const beerSelected = (selectedBeer) => {
     payload: selectedBeer
   };
 }
+
+export const sendData = (levels) => {
+  const { currentUser } = firebase.auth();
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/levelProgress`)
+      .push(levels)
+      .then( () => {
+        dispatch({ type: SEND_DATA});
+        Actions.Beers({ type: 'reset'});
+      });
+  };
+};

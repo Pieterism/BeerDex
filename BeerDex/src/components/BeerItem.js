@@ -13,23 +13,23 @@ class BeerItem extends Component {
   }
 
   renderCheckbox() {
-    const isCompleted = this.props.completed;
+    const {completed} = this.props.beer;
 
-    if (isCompleted) {
+    if (completed) {
       return (
         <Image
           style={styles.checkBoxStyle}
           source={require("../images/completedCheckBox.png")}
         />
       );
-    } else {
-      return (
-        <Image
-          style={styles.checkBoxStyle}
-          source={require("../images/notCompletedCheckBox.png")}
-        />
-      );
     }
+    return (
+      <Image
+        style={styles.checkBoxStyle}
+        source={require("../images/notCompletedCheckBox.png")}
+      />
+    );
+
   }
 
   render() {
