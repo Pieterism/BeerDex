@@ -67,7 +67,7 @@ const RouterComponent = () => {
         <Scene
           key="BeerDetail"
           component={BeerDetail}
-          title="BEER DETAILS"
+          title=""
           titleStyle={{
             color: "#E28830",
             fontSize: 40,
@@ -75,7 +75,7 @@ const RouterComponent = () => {
           }}
           navigationBarStyle={{
             position: "absolute",
-            backgroundColor: "#2A374A",
+            backgroundColor: "transparent",
             zIndex: 100,
             top: 0,
             left: 0,

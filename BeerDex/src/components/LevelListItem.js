@@ -81,7 +81,7 @@ const styles = {
   },
   img: {
     width: 25,
-    height: 35
+    height: 35, 
   },
   cardsection: {
     borderColor: "#E28830",
