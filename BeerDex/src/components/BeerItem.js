@@ -11,15 +11,43 @@ class BeerItem extends Component {
     this.props.beerSelected(beer);
     Actions.BeerDetail();
   }
+
+  renderCheckbox() {
+    const isCompleted = this.props.completed;
+
+    if (isCompleted) {
+      return (
+        <Image
+          style={styles.checkBoxStyle}
+          source={require("../images/completedCheckBox.png")}
+        />
+      );
+    } else {
+      return (
+        <Image
+          style={styles.checkBoxStyle}
+          source={require("../images/notCompletedCheckBox.png")}
+        />
+      );
+    }
+  }
+
   render() {
-    const { name, brewery, percentage, description, image } = this.props.beer;
+    const {
+      name,
+      completed,
+      brewery,
+      percentage,
+      description,
+      image
+    } = this.props.beer;
     return (
       <TouchableWithoutFeedback onPress={this.onButtonPress.bind(this)}>
         <View style={styles.buttonView}>
           <View style={styles.iconTitle}>
             <Image style={styles.imageStyle} source={{ uri: image }} />
             <Text style={styles.titleStyle}>{name}</Text>
-            
+            {this.renderCheckbox()}
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -59,6 +87,11 @@ const styles = {
     fontSize: 30,
     color: "#E28830",
     fontFamily: "Andy Bold"
+  },
+  checkBoxStyle: {
+    height: 40,
+    width: 40,
+    backgroundColor: "transparent"
   }
 };
 
