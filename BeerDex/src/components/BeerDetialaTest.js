@@ -48,7 +48,7 @@ class Beers extends Component {
     );
   }
 
-  /*render() {
+  render() {
     const {
       name,
       completed,
@@ -66,7 +66,7 @@ class Beers extends Component {
         </ScrollView>
       </View>
     );
-  }*/
+  }
 }
 
 const mapStateToProps = ({ beer }) => {
@@ -102,5 +102,25 @@ const styles = {
     borderColor: "#E28830"
   }
 };
+
+  /*render() {
+    const {
+      name,
+      completed,
+      percentage,
+      description,
+      image
+    } = this.props.selectedBeer;
+    return (
+      <View style={styles.container}>
+        <ScrollView style={{ flex: 1 }}>
+          <View style={styles.header}>
+            <Text style={styles.titleText}>{name}</Text>
+            <Image style={styles.imageStyle} source={{ uri: image }} />
+          </View>
+        </ScrollView>
+      </View>
+    );
+  }*/
 
 export default connect(mapStateToProps)(Beers);
