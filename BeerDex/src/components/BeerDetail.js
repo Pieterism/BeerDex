@@ -1,99 +1,203 @@
-import React , {Component} from 'react';
-import {Text, View, ScrollView, Image} from 'react-native';
-import {connect} from 'react-redux';
-import {levelSelected} from './../actions';
-import BeerItem from './BeerItem.js';
-import Map from './Map.js';
-import {Button} from './common';
-import {sendData, completed, updateData} from './../actions';
-
-
+import React, { Component } from "react";
+import { Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
+import { connect } from "react-redux";
+import { levelSelected } from "./../actions";
+import BeerItem from "./BeerItem.js";
+import Map from "./Map.js";
+import { Button } from "./common";
+import { sendData, completed, updateData } from "./../actions";
 
 class Beers extends Component {
-  onButtonPress () {
-    const {levels, selectedBeer, selectedLevel} = this.props;
+  onButtonPress() {
+    const { levels, selectedBeer, selectedLevel } = this.props;
     selectedBeer.completed = true;
-    selectedLevel.complete ++;
+    selectedLevel.complete++;
 
     console.log(selectedBeer);
     console.log(selectedLevel);
-    this.props.completed({selectedBeer, selectedLevel});
+    this.props.completed({ selectedBeer, selectedLevel });
     this.props.updateData(levels);
   }
 
-  renderButton () {
-    const {completed} = this.props.selectedBeer;
+  renderButton() {
+    const { completed } = this.props.selectedBeer;
 
     if (completed) {
       return (
         <View>
-          <Text>
-            Hier Moet een map komen kejet
-          </Text>
-          <Text>
-            Hier moet een foto komen!
-          </Text>
+          <Text>Hier Moet een map komen kejet</Text>
+          <Text>Hier moet een foto komen!</Text>
         </View>
       );
     }
+    return <Button onPress={this.onButtonPress.bind(this)}>Drink</Button>;
+  }
+
+  render() {
+    const {
+      name,
+      percentage,
+      description,
+      image,
+      brewery
+    } = this.props.selectedBeer;
     return (
-      <Button onPress={this.onButtonPress.bind(this)}>Drink</Button>
+      <View style={{ paddingTop: 50, flex: 1 }}>
+        <View>
+          <Text style={styles.titleStyle}>{name}</Text>
+
+          <Image style={styles.imageStyle} source={{ uri: image }} />
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <Text>{brewery}</Text>
+          <Text>{percentage}</Text>
+          <Text>{description}</Text>
+          {this.renderButton()}
+        </View>
+      </View>
     );
   }
 
-  render () {
-    const {name, percentage, description, image, brewery} = this.props.selectedBeer;
+  render() {
+    const {
+      name,
+      completed,
+      percentage,
+      description,
+      image,
+      brewery
+    } = this.props.selectedBeer;
     return (
-      <View style = {{paddingTop: 50, flex:1}}>
+      <View style={styles.container}>
+        <ScrollView style={{ flex: 1 }}>
+          <View style={styles.header}>
+            <Text style={styles.titleText}>{name}</Text>
+            <Image style={styles.imageStyle} source={{ uri: image }} />
+          </View>
 
-        <View>
-          <Text style = {styles.titleStyle}>
-            {name}
-          </Text>
+          <View style={styles.infoContainer}>
+            <View justifyContent="center" alignItems="center">
+              <Text style={styles.infoTitle}>Algemene Info</Text>
+            </View>
+            <View style={styles.rowView}>
+              <Text style={styles.labelText}>Brouwerij:</Text>
+              <Text style={styles.infoText}>{brewery}</Text>
+            </View>
+            <View style={styles.rowView}>
+              <Text style={styles.labelText}>Alcohol %:</Text>
+              <Text style={styles.infoText}>{percentage}%</Text>
+            </View>
+            <View style={styles.rowView}>
+              <Text style={styles.labelText}>Extra: </Text>
+              <Text style={styles.infoText}>{description}</Text>
+            </View>
+          </View>
 
-          <Image
-            style = {styles.imageStyle}
-            source = {{uri : image}}
-          />
-        </View>
+          <View style={styles.infoContainer}>
+            <View justifyContent="center" alignItems="center">
+              <Text style={styles.infoTitle}>MAP</Text>
+            </View>
+          </View>
 
-        <View style = {{flex:1}}>
-          <Text>
-            {brewery}
-          </Text>
-          <Text>
-            {percentage}
-          </Text>
-          <Text>
-            {description}
-          </Text>
-          {this.renderButton()}
-        </View>
+          <View style={styles.infoContainer}>
+            <View justifyContent="center" alignItems="center">
+              <Text style={styles.infoTitle}>PICTURE</Text>
+            </View>
+          </View>
 
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity justifyContent="center" alignItems="center">
+              <Text style={styles.buttonTitle}>Drink this beer!</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     );
   }
 }
 
-const mapStateToProps = ({beer}) => {
-  const {levels, selectedLevel, selectedBeer} = beer;
-  return {levels, selectedLevel, selectedBeer};
+const mapStateToProps = ({ beer }) => {
+  const { levels, selectedLevel, selectedBeer } = beer;
+  return { levels, selectedLevel, selectedBeer };
 };
 
 const styles = {
   container: {
-    paddingTop: 50,
-    backgroundColor: "#2A374A"
+    backgroundColor: "#2A374A",
+    flex: 1,
+    paddingTop: 15
+  },
+  header: {
+    backgroundColor: "#2A374A",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  titleText: {
+    color: "#E28830",
+    fontSize: 40,
+    fontFamily: "Root Beer"
   },
   imageStyle: {
-    height: 100,
-    width: 100,
-    resizeMode: 'contain'
+    flex: 1,
+    height: 150,
+    width: 150,
+    resizeMode: "contain",
+    backgroundColor: "#fafafa",
+    marginTop: 5,
+    borderRadius: 20,
+    borderWidth: 3
   },
-  titleStyle: {
-    fontSize: 24,
-    paddingLeft: 15
+  infoContainer: {
+    backgroundColor: "#2A374A",
+    justifyContent: "flex-start",
+    marginTop: 10,
+    borderRadius: 20,
+    borderWidth: 3,
+    borderColor: "#E28830",
+    paddingBottom: 5
+  },
+  buttonContainer: {
+    backgroundColor: "#E28830",
+    justifyContent: "center",
+    alignItems: "stretch",
+    marginTop: 10,
+    marginBottom: 10,
+    borderRadius: 20
+  },
+  rowView: {
+    flexDirection: "row"
+  },
+  infoTitle: {
+    color: "#E28830",
+    fontSize: 25,
+    marginTop: 5,
+    fontFamily: "TheLightFont",
+    textDecorationLine: "underline",
+    paddingBottom: 5
+  },
+  buttonTitle: {
+    color: "#2A374A",
+    fontSize: 32,
+    fontFamily: "Andy Bold",
+    marginLeft: 112
+  },
+  labelText: {
+    color: "#E28830",
+    fontSize: 20,
+    marginLeft: 15,
+    fontFamily: "typewcond_regular"
+  },
+  infoText: {
+    flex: 2,
+    color: "#E28830",
+    fontSize: 20,
+    marginLeft: 15,
+    fontFamily: "typewcond_regular",
+    flexWrap: "wrap"
   }
-}
+};
 
-export default connect(mapStateToProps, {sendData, completed, updateData})(Beers);
+export default connect(mapStateToProps, { sendData, completed, updateData })(
+  Beers
+);
