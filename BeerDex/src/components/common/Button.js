@@ -4,7 +4,9 @@ import {Text, TouchableOpacity} from 'react-native';
 //making the button reusable by passing the function that needs to be  executed when pressed!
 const Button = ({onPress, children}) => {
   return (
-    <TouchableOpacity onPress = {onPress} style = {styles.buttonStyle}>
+    <TouchableOpacity
+      onPress = {onPress}
+        style = {[styles.buttonStyle, props.style]}>
       <Text style = {styles.textStyle}>{children}</Text>
     </TouchableOpacity>
   );
