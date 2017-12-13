@@ -29,26 +29,34 @@ class Beers extends Component {
       return (
         <View style={styles.container}>
           <View style={styles.infoContainer}>
-            <View justifyContent="center" alignItems="center">
+            <Button
+              style={styles.buttonContainer}
+              onPress={this.onButtonPress.bind(this)}
+            >
               <Text style={styles.infoTitle}>MAP</Text>
-            </View>
+            </Button>
           </View>
 
           <View style={styles.infoContainer}>
-            <View justifyContent="center" alignItems="center">
+            <Button
+              style={styles.buttonContainer}
+              onPress={this.onButtonPress.bind(this)}
+            >
               <Text style={styles.infoTitle}>PICTURE</Text>
-            </View>
+            </Button>
           </View>
         </View>
       );
     }
     return (
-      <Button
-        style={styles.buttonContainer}
-        onPress={this.onButtonPress.bind(this)}
-      >
-        <Text style={styles.buttonTitle}>Drink this beer!</Text>
-      </Button>
+      <View style={styles.infoContainer}>
+        <Button
+          style={styles.buttonContainer}
+          onPress={this.onButtonPress.bind(this)}
+        >
+          <Text style={styles.buttonTitle}>Let's Drink!</Text>
+        </Button>
+      </View>
     );
   }
 
@@ -137,7 +145,7 @@ const styles = {
     paddingBottom: 5
   },
   buttonContainer: {
-    backgroundColor: "#E28830",
+    backgroundColor: "#2A374A",
     justifyContent: "center",
     alignItems: "center",
     marginTop: 15,
@@ -151,17 +159,19 @@ const styles = {
   },
   infoTitle: {
     color: "#E28830",
-    fontSize: 25,
+    fontSize: 32,
     marginTop: 5,
     fontFamily: "TheLightFont",
     textDecorationLine: "underline",
-    paddingBottom: 5
+    paddingBottom: 5,
+    paddingTop: 5
   },
   buttonTitle: {
-    color: "#2A374A",
+    color: "#E28830",
     fontSize: 32,
-    fontFamily: "Andy Bold",
-    marginLeft: 112,
+    marginTop: 5,
+    fontFamily: "TheLightFont",
+    textDecorationLine: "underline",
     paddingBottom: 5,
     paddingTop: 5
   },

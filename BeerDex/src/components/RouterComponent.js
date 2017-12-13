@@ -8,6 +8,7 @@ import Splash from "./Splash.js";
 import BeerList from "./BeerList.js";
 import Beers from "./Beers.js";
 import BeerDetail from "./BeerDetail.js";
+import Map from './Map';
 
 const RouterComponent = () => {
   return (
@@ -68,6 +69,26 @@ const RouterComponent = () => {
           key="BeerDetail"
           component={BeerDetail}
           title=""
+          titleStyle={{
+            color: "#E28830",
+            fontSize: 40,
+            fontFamily: "Root Beer"
+          }}
+          navigationBarStyle={{
+            position: "absolute",
+            backgroundColor: "transparent",
+            zIndex: 100,
+            top: 0,
+            left: 0,
+            right: 0,
+            borderBottomWidth: 0,
+            elevation: 0
+          }}
+        />
+        <Scene
+          key="MapView"
+          component={Map}
+          title="MAP"
           titleStyle={{
             color: "#E28830",
             fontSize: 40,

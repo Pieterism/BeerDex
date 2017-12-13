@@ -87,6 +87,34 @@ export default class Map extends Component {
     navigator.geolocation.clearWatch(this.watchID);
   }
 
+  renderMap(){
+    return (
+      // Huidige locatie tonen!
+      <View style={styles.container}>
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={styles.map}
+          customMapStyle={MapStyle}
+          region={this.state.initialPosition}
+        >
+          <MapView.Marker
+            coordinate={this.state.markerPosition}
+            //Naam van bier inzetten
+            title = {"KU LEUVEN"}
+            description = {"Technologiecampus Gent"}
+          >
+            <View>
+              <Image
+                style={styles.imageMarker}
+                source={require('../images/mapMarker.png')}
+              />
+            </View>
+          </MapView.Marker>
+        </MapView>
+      </View>
+    );
+  }
+
   render() {
     return (
       // Huidige locatie tonen!
