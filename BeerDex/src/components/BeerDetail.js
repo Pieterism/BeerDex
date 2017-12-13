@@ -11,8 +11,8 @@ class Beers extends Component {
   onButtonPress() {
     const { levels, selectedBeer, selectedLevel } = this.props;
     selectedBeer.completed = true;
-    selectedLevel.complete ++;
-    if (selectedLevel.complete>=6) {
+    selectedLevel.complete++;
+    if (selectedLevel.complete >= 6) {
       levels.levels[selectedLevel.number + 1].free = true;
     }
 
@@ -27,13 +27,30 @@ class Beers extends Component {
 
     if (completed) {
       return (
-        <View>
-          <Text>Hier Moet een map komen kejet</Text>
-          <Text>Hier moet een foto komen!</Text>
+        <View style={styles.container}>
+          <View style={styles.infoContainer}>
+            <View justifyContent="center" alignItems="center">
+              <Text style={styles.infoTitle}>MAP</Text>
+            </View>
+          </View>
+
+          <View style={styles.infoContainer}>
+            <View justifyContent="center" alignItems="center">
+              <Text style={styles.infoTitle}>PICTURE</Text>
+            </View>
+          </View>
         </View>
       );
     }
-    return <Button onPress={this.onButtonPress.bind(this)}>Drink</Button>;
+    return (
+      <Button
+        justifyContent="center"
+        alignItems="center"
+        onPress={this.onButtonPress.bind(this)}
+      >
+        <Text style={styles.buttonTitle}>Drink this beer!</Text>
+      </Button>
+    );
   }
 
   render() {
@@ -97,23 +114,7 @@ class Beers extends Component {
             </View>
           </View>
 
-          <View style={styles.infoContainer}>
-            <View justifyContent="center" alignItems="center">
-              <Text style={styles.infoTitle}>MAP</Text>
-            </View>
-          </View>
-
-          <View style={styles.infoContainer}>
-            <View justifyContent="center" alignItems="center">
-              <Text style={styles.infoTitle}>PICTURE</Text>
-            </View>
-          </View>
-
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity justifyContent="center" alignItems="center">
-              <Text style={styles.buttonTitle}>Drink this beer!</Text>
-            </TouchableOpacity>
-          </View>
+          {this.renderButton()}
         </ScrollView>
       </View>
     );

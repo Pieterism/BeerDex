@@ -31,6 +31,12 @@ const styles = {
     fontWeight: '600',
     paddingTop: 10,
     paddingBottom: 10
-  }
+  },
+  buttonTitle: {
+    color: "#2A374A",
+    fontSize: 32,
+    fontFamily: "Andy Bold",
+    marginLeft: 112
+  },
 }
 export {Button};
