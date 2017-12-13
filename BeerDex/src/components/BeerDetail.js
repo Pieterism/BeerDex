@@ -6,6 +6,7 @@ import BeerItem from "./BeerItem.js";
 import Map from "./Map.js";
 import { Button } from "./common";
 import { sendData, completed, updateData } from "./../actions";
+import Camera from "react-native-camera";
 
 class Beers extends Component {
   onButtonPress() {
@@ -38,12 +39,29 @@ class Beers extends Component {
           </View>
 
           <View style={styles.infoContainer}>
-            <Button
-              style={styles.buttonContainer}
-              onPress={this.onButtonPress.bind(this)}
-            >
+            <View justifyContent="center" alignItems="center">
               <Text style={styles.infoTitle}>PICTURE</Text>
-            </Button>
+            </View>
+            <Camera
+              ref={cam => {
+                this.camera = cam;
+              }}
+              onBarCodeRead={this.onBarCodeRead.bind(this)}
+              style={styles.preview}
+              aspect={Camera.constants.Aspect.fill}
+            >
+              <View justifyContent="center" backgroundColor="transparent">
+                <Text
+                  style={styles.capture}
+                  onPress={this.takePicture.bind(this)}
+                  justifyContent="center"
+                  backgroundColor="transparent"
+                  color="#E28830"
+                >
+                  [CAPTURE]
+                </Text>
+              </View>
+            </Camera>
           </View>
         </View>
       );
@@ -58,6 +76,19 @@ class Beers extends Component {
         </Button>
       </View>
     );
+  }
+
+  onBarCodeRead(e) {
+    console.log("Barcode Found!", "Type: " + e.type + "\nData: " + e.data);
+  }
+
+  takePicture() {
+    const options = {};
+    //options.location = ...
+    this.camera
+      .capture({ metadata: options })
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
   }
 
   render() {
