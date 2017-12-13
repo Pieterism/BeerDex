@@ -108,7 +108,7 @@ class Beers extends Component {
               <Text style={styles.infoText}>{percentage}%</Text>
             </View>
             <View style={styles.rowView}>
-              <Text style={styles.labelText}>Extra: </Text>
+              <Text style={styles.labelText}>Extra:    </Text>
               <Text style={styles.infoText}>{description}</Text>
             </View>
           </View>
