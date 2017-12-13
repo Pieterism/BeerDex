@@ -14,7 +14,10 @@ import LevelListItem from './LevelListItem.js';
 import data from './../data/data.json';
 
 class BeerList extends Component {
-
+  constructor (props) {
+    super(props);
+    this.props.levelsFetch();
+  }
   renderLevels() {
     console.log(this.props.levels)
     return this.props.levels.levels.map( level =>

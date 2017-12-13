@@ -10,6 +10,8 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case BEERLEVELS_FETCH: {
+      console.log(action.payload)
+      if (action.payload ===null) return INITIAL_STATE;
       return {...state, levels: action.payload}
     }
     case SELECT_LEVEL:

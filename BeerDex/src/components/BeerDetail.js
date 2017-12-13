@@ -11,7 +11,10 @@ class Beers extends Component {
   onButtonPress() {
     const { levels, selectedBeer, selectedLevel } = this.props;
     selectedBeer.completed = true;
-    selectedLevel.complete++;
+    selectedLevel.complete ++;
+    if (selectedLevel.complete>=6) {
+      levels.levels[selectedLevel.number + 1].free = true;
+    }
 
     console.log(selectedBeer);
     console.log(selectedLevel);

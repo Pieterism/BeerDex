@@ -4,7 +4,7 @@ import {BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER, SEND_DATA, COMPLETED, UPDAT
 import data from './../data/data.json';
 
 
-export const levelsFetch = (state) => {
+export const levelsFetch = () => {
   // return ({
   //   type: BEERLEVELS_FETCH,
   //   payload: data
