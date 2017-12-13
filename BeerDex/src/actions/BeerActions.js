@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import {Actions} from 'react-native-router-flux';
-import {BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER, SEND_DATA, COMPLETED, UPDATE_DATA} from './types.js';
+import {BEERLEVELS_FETCH, SELECT_LEVEL, SELECT_BEER, SEND_DATA, COMPLETED, UPDATE_DATA, SET_PICTURE} from './types.js';
 import data from './../data/data.json';
 
 
@@ -54,14 +54,21 @@ export const updateData = (levels) => {
       ref.update(levels)
       .then( () => {
         dispatch({ type: UPDATE_DATA});
-        Actions.Levels({ type: 'reset'});
       });
   };
 };
 
-export const completed = ({selectedBeer, selectedLevel}) => {
+export const completed = ({selectedBeer, selectedLevel, picture}) => {
   return {
     type: COMPLETED,
-    payload: {selectedBeer, selectedLevel}
+    payload: {selectedBeer, selectedLevel, picture}
+  };
+}
+
+export const setPicture = (data) => {
+  const {path} = data;
+  return {
+    type: SET_PICTURE,
+    payload: path
   };
 }

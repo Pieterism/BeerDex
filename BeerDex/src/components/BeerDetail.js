@@ -7,6 +7,7 @@ import Map from "./Map.js";
 import { Button } from "./common";
 import { sendData, completed, updateData } from "./../actions";
 import Camera from "react-native-camera";
+import { Actions } from 'react-native-router-flux';
 
 class Beers extends Component {
   onButtonPress() {
@@ -17,14 +18,17 @@ class Beers extends Component {
       levels.levels[selectedLevel.number + 1].free = true;
     }
 
-    console.log(selectedBeer);
-    console.log(selectedLevel);
     this.props.completed({ selectedBeer, selectedLevel });
     this.props.updateData(levels);
+    Actions.Camera();
   }
 
+  mapButtonPressed () {
+    Actions.MapView();
+  }
   renderButton() {
-    const { completed } = this.props.selectedBeer;
+    const { completed} = this.props.selectedBeer;
+    console.log(this.props.picture);
 
     if (completed) {
       return (
@@ -32,37 +36,20 @@ class Beers extends Component {
           <View style={styles.infoContainer}>
             <Button
               style={styles.buttonContainer}
-              onPress={this.onButtonPress.bind(this)}
+              onPress={this.mapButtonPressed.bind(this)}
             >
               <Text style={styles.infoTitle}>MAP</Text>
             </Button>
           </View>
 
-          <View style={styles.infoContainer}>
-            <View justifyContent="center" alignItems="center">
-              <Text style={styles.infoTitle}>PICTURE</Text>
-            </View>
-            <Camera
-              ref={cam => {
-                this.camera = cam;
-              }}
-              onBarCodeRead={this.onBarCodeRead.bind(this)}
-              style={styles.preview}
-              aspect={Camera.constants.Aspect.fill}
-            >
-              <View justifyContent="center" backgroundColor="transparent">
-                <Text
-                  style={styles.capture}
-                  onPress={this.takePicture.bind(this)}
-                  justifyContent="center"
-                  backgroundColor="transparent"
-                  color="#E28830"
-                >
-                  [CAPTURE]
-                </Text>
-              </View>
-            </Camera>
+          <View style={{alignItems: 'center'}}>
+            <Image
+              source={{uri: this.props.picture}}
+              style={styles.imageStyle}
+            />
           </View>
+
+
         </View>
       );
     }
@@ -134,8 +121,8 @@ class Beers extends Component {
 }
 
 const mapStateToProps = ({ beer }) => {
-  const { levels, selectedLevel, selectedBeer } = beer;
-  return { levels, selectedLevel, selectedBeer };
+  const { levels, selectedLevel, selectedBeer, picture} = beer;
+  return { levels, selectedLevel, selectedBeer, picture };
 };
 
 const styles = {

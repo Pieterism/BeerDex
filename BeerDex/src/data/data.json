@@ -161,6 +161,16 @@
         "location": null,
         "picture" : null
       },
+      {
+        "name": "Kasteelbier Rood",
+        "percentage": 8,
+        "description":  "Ideaal!! vant beste ;)",
+        "completed": false,
+        "brewery": "Brouwerij Van Honsebrouck",
+        "image": "https://static.webshopapp.com/shops/065337/files/150212591/800x600x2/e3-kasteelbier-selectie-bierbox.jpg",
+        "location": null,
+        "picture" : null
+      }
     ],
       "number": 1,
       "description": "Not bad... but you still have a long way to go! You have merely proven that you get thirsty once in a while... Try and collect these: ",
@@ -169,7 +179,7 @@
       "free": false
     },
     {
-      "array": [
+      "beers": [
         {
           "name": "Rodenbach",
           "percentage": 5.2,
@@ -240,6 +250,16 @@
           "location": null,
           "picture" : null
         },
+        {
+          "name": "Guinness",
+          "percentage": 6.5,
+          "description": "Beste Pils ever! ",
+          "completed": false,
+          "brewery": "St. James' Gate brewery",
+          "image": "https://www.nullammicrowaveum.com/wp-content/uploads/2016/03/410910.jpg",
+          "location": null,
+          "picture" : null
+        },
     ],
     "number": 2,
     "description": "Well done, you have proven that you do have some dedication in your life... even though its clearly in the wrong activity. But hey, you have come so far, you might as well go through it till the end!",
@@ -248,7 +268,7 @@
     "free": false
   },
   {
-      "array": [
+      "beers": [
         {
           "name": "Afligem",
           "percentage": 5.2,
@@ -316,6 +336,16 @@
           "completed": false,
           "brewery": "Brouwerij Alken-Maes",
           "image": "http://alken.cdenv.be/sites/alken/files/imagecache/gallery_large_image/nieuws/crilogorgb.jpg",
+          "location": null,
+          "picture" : null
+        },
+        {
+          "name": "Snake Venom",
+          "percentage": 67.5,
+          "description": "Beste Pils ever! ",
+          "completed": false,
+          "brewery": "Brewmeister",
+          "image": "http://www.bierista.nl/biernieuws/wp-content/uploads/2013/10/bierista-nieuws-brewmeister-snakevenom_bier.jpg",
           "location": null,
           "picture" : null
         },

@@ -11,3 +11,4 @@ export const SELECT_BEER = 'select_beer';
 export const SEND_DATA = 'send_data';
 export const COMPLETED = 'completed';
 export const UPDATE_DATA = 'update_data';
+export const SET_PICTURE = 'set_picture';
