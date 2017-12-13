@@ -44,38 +44,11 @@ class Beers extends Component {
     }
     return (
       <Button
-        justifyContent="center"
-        alignItems="center"
+        style={styles.buttonContainer}
         onPress={this.onButtonPress.bind(this)}
       >
         <Text style={styles.buttonTitle}>Drink this beer!</Text>
       </Button>
-    );
-  }
-
-  render() {
-    const {
-      name,
-      percentage,
-      description,
-      image,
-      brewery
-    } = this.props.selectedBeer;
-    return (
-      <View style={{ paddingTop: 50, flex: 1 }}>
-        <View>
-          <Text style={styles.titleStyle}>{name}</Text>
-
-          <Image style={styles.imageStyle} source={{ uri: image }} />
-        </View>
-
-        <View style={{ flex: 1 }}>
-          <Text>{brewery}</Text>
-          <Text>{percentage}</Text>
-          <Text>{description}</Text>
-          {this.renderButton()}
-        </View>
-      </View>
     );
   }
 
@@ -158,15 +131,19 @@ const styles = {
     marginTop: 10,
     borderRadius: 20,
     borderWidth: 3,
+    marginLeft: 5,
+    marginRight: 5,
     borderColor: "#E28830",
     paddingBottom: 5
   },
   buttonContainer: {
     backgroundColor: "#E28830",
     justifyContent: "center",
-    alignItems: "stretch",
-    marginTop: 10,
-    marginBottom: 10,
+    alignItems: "center",
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 5,
+    marginRight: 5,
     borderRadius: 20
   },
   rowView: {
@@ -184,7 +161,9 @@ const styles = {
     color: "#2A374A",
     fontSize: 32,
     fontFamily: "Andy Bold",
-    marginLeft: 112
+    marginLeft: 112,
+    paddingBottom: 5,
+    paddingTop: 5
   },
   labelText: {
     color: "#E28830",

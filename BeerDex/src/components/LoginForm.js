@@ -36,7 +36,14 @@ class LoginForm extends Component {
       return <Spinner size="large" />;
     }
 
-    return <Button onPress={this.onButtonPress.bind(this)}>Login</Button>;
+    return (
+      <Button
+        style={styles.buttonStyle}
+        onPress={this.onButtonPress.bind(this)}
+      >
+        <Text style={styles.textStyle}>Login</Text>
+      </Button>
+    );
   }
 
   render() {
@@ -80,7 +87,6 @@ class LoginForm extends Component {
               name="google"
               backgroundColor="#DD4B39"
               onPress={this.loginWithGoogle}
-
               {...iconStyles}
             >
               Login with Google
@@ -110,6 +116,26 @@ const styles = {
     flex: 1,
     backgroundColor: "#2A374A",
     justifyContent: "center"
+  },
+  textStyle: {
+    fontFamily: "Andy Bold",
+    alignSelf: "center",
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "600",
+    paddingTop: 20,
+    paddingBottom: 20
+  },
+  buttonStyle: {
+    flex: 1,
+    backgroundColor: "#E28830",
+    borderRadius: 5,
+    borderWidth: 2,
+    paddingTop: 6,
+    paddingBottom:6,
+    borderColor: "#E28830",
+    marginLeft: 90,
+    marginRight: 90
   }
 };
 
