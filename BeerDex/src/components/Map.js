@@ -12,12 +12,14 @@ import {
   StyleSheet,
   Text,
   View,
-  Dimensons,
   Dimensions,
-  Image
+  Image,
+  ScrollView,
+  Animated
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import MapStyle from "./common/MapStyle.json";
+import { Button } from "./common";
 
 const { width, height } = Dimensions.get("window");
 
@@ -40,7 +42,7 @@ export default class Map extends Component {
       },
       markerPosition: {
         latitude: 51.060317,
-        longitude: 3.708432,
+        longitude: 3.708432
       }
     };
   }
@@ -83,11 +85,36 @@ export default class Map extends Component {
     });
   }
 
+  renderMarker() {
+    return (
+      <MapView.Marker
+        coordinate={
+          (this.state = {
+            latitude: 51.060565,
+            longitude: 3.709994,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01
+          })
+        }
+        //Naam van bier inzetten
+        title={"DE LIMIET"}
+        description={"Rodenbach"}
+      >
+        <View>
+          <Image
+            style={styles.imageMarker}
+            source={require("../images/mapMarker.png")}
+          />
+        </View>
+      </MapView.Marker>
+    );
+  }
+
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchID);
   }
 
-  renderMap(){
+  renderMap() {
     return (
       // Huidige locatie tonen!
       <View style={styles.container}>
@@ -100,13 +127,13 @@ export default class Map extends Component {
           <MapView.Marker
             coordinate={this.state.markerPosition}
             //Naam van bier inzetten
-            title = {"KU LEUVEN"}
-            description = {"Technologiecampus Gent"}
+            title={"KU LEUVEN"}
+            description={"Technologiecampus Gent"}
           >
             <View>
               <Image
                 style={styles.imageMarker}
-                source={require('../images/mapMarker.png')}
+                source={require("../images/mapMarker.png")}
               />
             </View>
           </MapView.Marker>
@@ -125,19 +152,12 @@ export default class Map extends Component {
           customMapStyle={MapStyle}
           region={this.state.initialPosition}
         >
-          <MapView.Marker
-            coordinate={this.state.markerPosition}
-            //Naam van bier inzetten
-            title = {"KU LEUVEN"}
-            description = {"Technologiecampus Gent"}
-          >
-            <View>
-              <Image
-                style={styles.imageMarker}
-                source={require('../images/mapMarker.png')}
-              />
+          <MapView.Marker coordinate={this.state.markerPosition}>
+            <View style={styles.radius}>
+              <View style={styles.marker} />
             </View>
           </MapView.Marker>
+          {this.renderMarker()}
         </MapView>
       </View>
     );
@@ -153,10 +173,10 @@ const styles = StyleSheet.create({
   },
   //AANPASSEN OM KLEINERE KAART TE KRIJGEN
   map: {
-    right: 50,
-    left: 50,
-    top: 50,
-    bottom: 50,
+    right: 0,
+    left: 0,
+    top: 0,
+    bottom: 0,
     position: "absolute"
   },
   radius: {
@@ -182,5 +202,23 @@ const styles = StyleSheet.create({
   imageMarker: {
     width: 25,
     height: 25 * 1.2583
+  },
+  buttonContainer: {
+    backgroundColor: "#2A374A",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 5,
+    marginRight: 5,
+    borderRadius: 20
+  },
+  buttonTitle: {
+    color: "#E28830",
+    fontSize: 32,
+    marginTop: 5,
+    fontFamily: "TheLightFont",
+    paddingBottom: 5,
+    paddingTop: 5
   }
 });

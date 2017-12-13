@@ -5,4 +5,4 @@ import Login from "./src/components/Login";
 import RouterComponent from './src/components/RouterComponent.js';
 import Map from './src/components/Map';
 
-AppRegistry.registerComponent("BeerDex", () => Splash);
+AppRegistry.registerComponent("BeerDex", () => Map);
